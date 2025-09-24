@@ -3,10 +3,10 @@
     "devenv": {
       "locked": {
         "dir": "src/modules",
-        "lastModified": 1758555931,
+        "lastModified": 1758578119,
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "bfa88a4d33fbeb3c7b84af8108c50b13624e8097",
+        "rev": "56782ef9e6fec7fc5cbbbd88f04ce114faac2e35",
         "type": "github"
       },
       "original": {
@@ -72,6 +72,21 @@
         "type": "github"
       }
     },
+    "nix-pkgs-opentofu-1_10_6": {
+      "locked": {
+        "lastModified": 1756927279,
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "47aa645be61601979fd9de9e2192aa863c9912d6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "47aa645be61601979fd9de9e2192aa863c9912d6",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1755783167,
@@ -91,6 +106,7 @@
       "inputs": {
         "devenv": "devenv",
         "git-hooks": "git-hooks",
+        "nix-pkgs-opentofu-1_10_6": "nix-pkgs-opentofu-1_10_6",
         "nixpkgs": "nixpkgs",
         "pre-commit-hooks": [
           "git-hooks"

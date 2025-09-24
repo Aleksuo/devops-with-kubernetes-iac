@@ -1,5 +1,8 @@
 { pkgs, lib, config, inputs, ... }:
 
+let 
+  otfPkgs = inputs.nix-pkgs-opentofu-1_10_6.legacyPackages.${pkgs.stdenv.system};
+in   
 {
   # https://devenv.sh/basics/
   env.GREET = "devenv";
@@ -17,6 +20,10 @@
   # services.postgres.enable = true;
 
   # https://devenv.sh/scripts/
+
+  languages.opentofu.enable = true;
+  languages.opentofu.package = otfPkgs.opentofu;
+
   scripts.hello.exec = ''
     echo hello from $GREET
   '';
