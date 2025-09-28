@@ -24,10 +24,19 @@ output "size_slugs" {
 
 data "digitalocean_kubernetes_versions" "current" {}
 
+resource "digitalocean_container_registry" "exercises" {
+  name = "exercises"
+  subscription_tier_slug = "basic"
+  lifecycle {
+    prevent_destroy = false
+  }
+}
+
 resource "digitalocean_kubernetes_cluster" "kubernetes_exercises" {
   name    = "kubernetes-exercises"
   region  = "fra1"
   version = data.digitalocean_kubernetes_versions.current.latest_version
+  registry_integration = true
 
   node_pool {
     name       = "default-pool"
