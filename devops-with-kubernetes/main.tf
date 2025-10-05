@@ -38,6 +38,9 @@ resource "digitalocean_kubernetes_cluster" "kubernetes_exercises" {
   version = data.digitalocean_kubernetes_versions.current.latest_version
   registry_integration = true
 
+  cluster_subnet = "172.27.0.0/16"
+  service_subnet = "172.28.0.0/20"
+
   node_pool {
     name       = "default-pool"
     size       = "s-1vcpu-2gb"
